@@ -72,20 +72,22 @@ const getThemes = (mode) => {
   };
 };
 
-export const themeContext = createContext({
-  toggleMode: () => {},
+export const ThemeContext = createContext({
+  toggleTheme: () => {},
 });
 
 export const useTheme = () => {
   const [mode, setMode] = useState("dark");
 
-  const changeTheme = useMemo(() => {
-    setMode((prevMode) => (prevMode === "dark" ? "light" : "dark"));
-  }, []);
+  const toggleMode = useMemo(
+    () => ({
+      toggleTheme: () =>
+        setMode((prevMode) => (prevMode === "dark" ? "light" : "dark")),
+    }),
+    []
+  );
 
-  const theme = useMemo(() => {
-    createTheme(getThemes(mode));
-  }, [mode]);
+  const theme = useMemo(() => createTheme(getThemes(mode)), [mode]);
 
-  return [theme, changeTheme];
+  return [theme, toggleMode];
 };

@@ -1,4 +1,4 @@
-export const tokens = (mode) => ({
+export const getColorPalate = (mode) => ({
   ...(mode === "dark"
     ? {
         grey: {
