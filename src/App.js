@@ -9,6 +9,7 @@ import Dashboard from "./feature/dashboard";
 import Team from "./feature/team";
 import Contact from "./feature/contact";
 import Invoice from "./feature/invoice";
+import Profile from "./feature/profile";
 
 function App() {
   const [theme, toggleMode] = useTheme();
@@ -26,7 +27,7 @@ function App() {
                 <Route path="/team" element={<Team />} />
                 <Route path="/contacts" element={<Contact />} />
                 <Route path="/invoices" element={<Invoice />} />
-                {/* <Route path="/form" element={<Profile />} /> */}
+                <Route path="/form" element={<Profile />} />
                 {/* <Route path="/calendar" element={<Calendar />} /> */}
                 {/* <Route path="/faq" element={<Faq />} /> */}
                 {/* <Route path="/bar" element={<BarChart />} /> */}

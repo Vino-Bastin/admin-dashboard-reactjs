@@ -59,7 +59,7 @@ const Contact = () => {
     <Box>
       <Header
         title="Contact"
-        subTitle="everything you need to know about team member"
+        subTitle="Everything you need to know about team member"
       />
       <Box
         height="75vh"

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 
@@ -38,9 +39,10 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 };
 
 const SideBar = () => {
+  const matches = useMediaQuery("(min-width:600px)");
   const theme = useTheme();
   const colors = getColorPalate(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(!matches);
   const [selected, setSelected] = useState(window.location.pathname);
 
   return (
