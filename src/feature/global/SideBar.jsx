@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
@@ -17,13 +17,12 @@ import PieChartIcon from "@mui/icons-material/PieChart";
 import TimelineIcon from "@mui/icons-material/Timeline";
 import MapIcon from "@mui/icons-material/Map";
 
-import { getColorPalate } from "../../theme/colors";
+import { useColors } from "../../theme/colors";
 
 import "react-pro-sidebar/dist/css/styles.css";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
-  const theme = useTheme();
-  const colors = getColorPalate(theme.palette.mode);
+  const colors = useColors();
 
   return (
     <MenuItem
@@ -40,8 +39,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 
 const SideBar = () => {
   const matches = useMediaQuery("(min-width:600px)");
-  const theme = useTheme();
-  const colors = getColorPalate(theme.palette.mode);
+  const colors = useColors();
   const [isCollapsed, setIsCollapsed] = useState(!matches);
   const [selected, setSelected] = useState(window.location.pathname);
 

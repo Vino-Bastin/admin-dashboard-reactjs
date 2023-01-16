@@ -1,15 +1,14 @@
 import React from "react";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 
 import Header from "../../components/Header";
 
-import { getColorPalate } from "../../theme/colors";
+import { useColors } from "../../theme/colors";
 import { invoicesData } from "../../data/testdata";
 
 const Index = () => {
-  const theme = useTheme();
-  const colors = getColorPalate(theme.palette.mode);
+  const colors = useColors();
 
   const dataGridColumns = [
     { field: "id", headerName: "ID", flex: 0.5 },

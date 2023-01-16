@@ -1,3 +1,12 @@
+import { useMemo } from "react";
+import { useTheme } from "@mui/material";
+
+export const useColors = () => {
+  const theme = useTheme();
+  const colors = useMemo(() => getColorPalate(theme.palette.mode), [theme]);
+  return colors;
+};
+
 export const getColorPalate = (mode) => ({
   ...(mode === "dark"
     ? {

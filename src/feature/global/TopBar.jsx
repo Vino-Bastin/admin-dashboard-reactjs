@@ -10,12 +10,12 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 
-import { getColorPalate } from "../../theme/colors";
+import { useColors } from "../../theme/colors";
 
 const TopBar = () => {
   const theme = useTheme();
   const { toggleTheme } = useContext(ThemeContext);
-  const color = getColorPalate(theme.palette.mode);
+  const colors = useColors();
 
   return (
     <Box
@@ -31,7 +31,7 @@ const TopBar = () => {
       <Box
         sx={{
           display: "flex",
-          backgroundColor: color.primary[400],
+          backgroundColor: colors.primary[400],
           p: 1,
           borderRadius: "7px",
         }}

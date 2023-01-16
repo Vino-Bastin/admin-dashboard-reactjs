@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 
@@ -9,13 +9,12 @@ import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import SecurityIcon from "@mui/icons-material/Security";
 
-import { getColorPalate } from "../../theme/colors";
+import { useColors } from "../../theme/colors";
 import { teamData } from "../../data/testdata";
 
 const Team = () => {
   const matches = useMediaQuery("(min-width:1100px)");
-  const theme = useTheme();
-  const colors = getColorPalate(theme.palette.mode);
+  const colors = useColors();
 
   const dataGridColumns = [
     { field: "id", headerName: "ID", flex: 0.5 },

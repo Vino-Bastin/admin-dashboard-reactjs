@@ -1,11 +1,10 @@
 import React from "react";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
-import { getColorPalate } from "../theme/colors";
+import { useColors } from "../theme/colors";
 
 const Header = ({ title, subTitle }) => {
-  const theme = useTheme();
-  const colors = getColorPalate(theme.palette.mode);
+  const colors = useColors();
   return (
     <Box mb="20px">
       <Typography variant="h2" color={colors.grey[100]} fontWeight="bold">

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -9,7 +9,7 @@ import Header from "../../components/Header";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-import { getColorPalate } from "../../theme/colors";
+import { useColors } from "../../theme/colors";
 
 const FAQQuestions = [
   {
@@ -46,9 +46,7 @@ const FAQQuestions = [
 
 const FAQ = () => {
   const matches = useMediaQuery("(min-width:600px)");
-  const theme = useTheme();
-  const colors = getColorPalate(theme.palette.mode);
-
+  const colors = useColors();
   return (
     <Box>
       <Header title="FAQ" subTitle="Frequently asked questions" />

@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Box,
-  useTheme,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import { Box, List, ListItem, ListItemText, Typography } from "@mui/material";
 import { formatDate } from "@fullcalendar/core";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
@@ -16,7 +9,7 @@ import listPlugin from "@fullcalendar/list";
 
 import Header from "../../components/Header";
 
-import { getColorPalate } from "../../theme/colors";
+import { useColors } from "../../theme/colors";
 
 const initialEvents = [
   {
@@ -33,8 +26,7 @@ const initialEvents = [
 
 const Calendar = () => {
   const [events, setEvents] = useState([]);
-  const theme = useTheme();
-  const colors = getColorPalate(theme.palette.mode);
+  const colors = useColors();
 
   const newEvent = (selected) => {
     const title = prompt("Please enter a new title for your event");

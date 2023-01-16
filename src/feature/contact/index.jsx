@@ -1,10 +1,10 @@
 import React from "react";
-import { Box, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 
 import Header from "../../components/Header";
 
-import { getColorPalate } from "../../theme/colors";
+import { useColors } from "../../theme/colors";
 import { contactsData } from "../../data/testdata";
 
 const dataGridColumns = [
@@ -52,8 +52,7 @@ const dataGridColumns = [
 ];
 
 const Contact = () => {
-  const theme = useTheme();
-  const colors = getColorPalate(theme.palette.mode);
+  const colors = useColors();
 
   return (
     <Box>
