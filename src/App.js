@@ -10,6 +10,8 @@ import Team from "./feature/team";
 import Contact from "./feature/contact";
 import Invoice from "./feature/invoice";
 import Profile from "./feature/profile";
+import Calendar from "./feature/Calendar";
+import FAQ from "./feature/faq";
 
 function App() {
   const [theme, toggleMode] = useTheme();
@@ -28,8 +30,8 @@ function App() {
                 <Route path="/contacts" element={<Contact />} />
                 <Route path="/invoices" element={<Invoice />} />
                 <Route path="/form" element={<Profile />} />
-                {/* <Route path="/calendar" element={<Calendar />} /> */}
-                {/* <Route path="/faq" element={<Faq />} /> */}
+                <Route path="/calendar" element={<Calendar />} />
+                <Route path="/faq" element={<FAQ />} />
                 {/* <Route path="/bar" element={<BarChart />} /> */}
                 {/* <Route path="/pie" element={<PieChart />} /> */}
                 {/* <Route path="/line" element={<LineChart />} /> */}

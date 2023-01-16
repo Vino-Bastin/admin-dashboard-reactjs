@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 
 import Header from "../../components/Header";
@@ -12,11 +13,12 @@ import { getColorPalate } from "../../theme/colors";
 import { teamData } from "../../data/testdata";
 
 const Team = () => {
+  const matches = useMediaQuery("(min-width:1100px)");
   const theme = useTheme();
   const colors = getColorPalate(theme.palette.mode);
 
   const dataGridColumns = [
-    { field: "id", headerName: "ID" },
+    { field: "id", headerName: "ID", flex: 0.5 },
     {
       field: "name",
       headerName: "Name",
@@ -29,6 +31,7 @@ const Team = () => {
       type: "number",
       headerAlign: "left",
       align: "left",
+      flex: 0.5,
     },
     {
       field: "phone",
@@ -47,7 +50,7 @@ const Team = () => {
       renderCell: ({ row: { access } }) => {
         return (
           <Box
-            minWidth="60%"
+            width={matches ? "60%" : "100%"}
             m="0 auto"
             p="5px"
             display="flex"
