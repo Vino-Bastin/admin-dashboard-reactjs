@@ -29,7 +29,6 @@ function App() {
             <TopBar />
             <Box marginLeft={2} marginRight={2}>
               <Routes>
-                <Route path="/" element={<Dashboard />} />
                 <Route path="/team" element={<Team />} />
                 <Route path="/contacts" element={<Contact />} />
                 <Route path="/invoices" element={<Invoice />} />
@@ -40,6 +39,7 @@ function App() {
                 <Route path="/pie" element={<PieChart />} />
                 <Route path="/line" element={<LineChart />} />
                 <Route path="/geography" element={<GeographyChart />} />
+                <Route path="*" element={<Dashboard />} />
               </Routes>
             </Box>
           </div>
